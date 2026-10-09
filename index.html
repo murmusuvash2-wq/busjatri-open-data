@@ -164,7 +164,6 @@
 <tr><td class="route">Midnapur<span class="arrow">&rarr;</span>Kolkata</td><td class="num">10</td><td class="op hide-s">SBSTC</td><td class="num hide-s">04:40</td><td class="num hide-s">15:15</td><td class="go"><a href="https://busjatri.in/bus-time-table/midnapur-to-kolkata">Timetable &rarr;</a></td></tr>
 <tr><td class="route">Nabadwip<span class="arrow">&rarr;</span>Benachity</td><td class="num">10</td><td class="op hide-s">ARGHA TRAVELS, Private, SANJU TRAVELS AGENCY</td><td class="num hide-s">05:20</td><td class="num hide-s">07:30</td><td class="go"><a href="https://busjatri.in/bus-time-table/nabadwip-to-benachity">Timetable &rarr;</a></td></tr>
 <tr><td class="route">Siliguri<span class="arrow">&rarr;</span>Cooch Behar</td><td class="num">10</td><td class="op hide-s">NBSTC</td><td class="num hide-s">05:30</td><td class="num hide-s">10:00</td><td class="go"><a href="https://busjatri.in/bus-time-table/siliguri-to-cooch-behar">Timetable &rarr;</a></td></tr>
-<tr><td class="route">—<span class="arrow">&rarr;</span>—</td><td class="num">9</td><td class="op hide-s"></td><td class="num hide-s">—</td><td class="num hide-s">—</td><td class="go"><a href="https://busjatri.in/bus-time-table/-to-">Timetable &rarr;</a></td></tr>
 <tr><td class="route">Alipurduar<span class="arrow">&rarr;</span>Siliguri</td><td class="num">9</td><td class="op hide-s">NBSTC</td><td class="num hide-s">05:00</td><td class="num hide-s">13:00</td><td class="go"><a href="https://busjatri.in/bus-time-table/alipurduar-to-siliguri">Timetable &rarr;</a></td></tr>
 <tr><td class="route">Asansol<span class="arrow">&rarr;</span>Karunamoyee</td><td class="num">9</td><td class="op hide-s">SBSTC, WBTC</td><td class="num hide-s">06:00</td><td class="num hide-s">16:40</td><td class="go"><a href="https://busjatri.in/bus-time-table/asansol-to-karunamoyee">Timetable &rarr;</a></td></tr>
 <tr><td class="route">Bankura<span class="arrow">&rarr;</span>Karunamoyee</td><td class="num">9</td><td class="op hide-s">SBSTC, WBTC</td><td class="num hide-s">05:15</td><td class="num hide-s">15:20</td><td class="go"><a href="https://busjatri.in/bus-time-table/bankura-to-karunamoyee">Timetable &rarr;</a></td></tr>
@@ -239,6 +238,7 @@ chips.insertAdjacentHTML("afterbegin", `<button class="chip on" data-op="">All o
 
 function match(r){
   const [o,d,c,ops] = r;
+  if (!o || !d || o === "—" || d === "—") return false;
   if (opFilter && !(ops||"").toUpperCase().includes(opFilter)) return false;
   if (!filter) return true;
   return (o+" "+d+" "+ops).toLowerCase().includes(filter);
